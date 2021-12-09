@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
-    <div style="display: flex;">
-      <div class="bd-sidebar border-bottom-0 col-md-3 col-xl-2 col-12 nav-side">
+  <div class="home" style="height: 100%">
+    <div style="display: flex; height: 100%">
+      <div class="bd-sidebar border-bottom-0 col-md-3 col-xl-2 nav-side">
         <b-input-group>
           <b-form-input placeholder="Search" v-model="search"></b-form-input>
 
@@ -15,7 +15,7 @@
           </b-list-group-item>
         </b-list-group>
       </div>
-      <div class="container container-back" style="display: flex">
+      <div class="container-fluid container-back" style="display: flex">
         <div class="row" style="margin-right: 0">
             <div v-for="el in currentCity" :key="el" class="col-2 card-itm">
               <b-card
@@ -128,6 +128,7 @@ export default {
 }
 .container-back{
   background-image: url("../../public/backjfif.png");
+  justify-content: center;
 }
 .card-itm {
   margin: 2rem 0;

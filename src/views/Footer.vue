@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="sm" type="dark" variant="info ">
+    <b-navbar toggleable="sm" type="dark" variant="info" fixed="bottom">
       <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
       <b-navbar-brand>MamedovOFF</b-navbar-brand>
       <b-collapse id="nav-text-collapse" is-nav>
