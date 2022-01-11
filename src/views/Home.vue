@@ -54,31 +54,21 @@
 // @ is an alias to /src
 
 import axios from "axios";
-
+import { mapGetters } from 'vuex'
 
 export default {
   data() {
     return {
-      allCity: ['Москва', 'Казань', 'Якутск', 'Токио', 'Сеул'],
       search: null,
       error_text: null,
       error_text_flag: null,
-      currentCity: [
-        {
-          city: null,
-          description: null,
-          img: null,
-          temp: null,
-          time: null
-        }
-      ],
       error: null
     }
   },
   name: 'Home',
   methods: {
-    async chek(el) {
-      await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${el}&appid=b17b82015893e71e82f1d06528e78ab7&lang=ru&units=metric`)
+    chek(el) {
+      axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${el}&appid=b17b82015893e71e82f1d06528e78ab7&lang=ru&units=metric`)
           .then((response) => {
             this.deleteObject()
             for (let i = 1; i < 7; i++)
@@ -117,6 +107,9 @@ export default {
         delete this.currentCity[el]
       this.currentCity.length = 0
     }
+  },
+  computed : {
+    ...mapGetters(['allCity', 'currentCity'])
   }
 }
 </script>
